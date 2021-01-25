@@ -7,4 +7,44 @@
     android:orientation="vertical"
     tools:context=".HouseCommitteeActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="House Committee"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/btnTenantPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:text="Tenant Payment" />
+
+    <Button
+        android:id="@+id/btnTotalPricesInTheBuilding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:text="Total Prices In The Building" />
+
+    <Button
+        android:id="@+id/btnSetTenantPayments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:text="Set Tenant Payments" />
+
+    <Button
+        android:id="@+id/btnMonthlyIncomeViaMonths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:text="Monthly Income Via Months" />
 </LinearLayout>

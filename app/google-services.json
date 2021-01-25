@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "341999480564",
+    "project_id": "finalarielproject",
+    "storage_bucket": "finalarielproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341999480564:android:3c66f125af617ea928b8a1",
+        "android_client_info": {
+          "package_name": "com.example.final_project_ariel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341999480564-e86r33m46uktj9it3nuuoisu6ao1tl02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVt2y7-2eFFhNsSqPcZCXWXRbgGIMeRzU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341999480564-e86r33m46uktj9it3nuuoisu6ao1tl02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
