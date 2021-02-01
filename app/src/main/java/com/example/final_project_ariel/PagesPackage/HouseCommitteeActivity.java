@@ -1,10 +1,12 @@
-package com.example.final_project_ariel;
+package com.example.final_project_ariel.PagesPackage;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.final_project_ariel.R;
 
 public class HouseCommitteeActivity extends AppCompatActivity implements View.OnClickListener  {
 

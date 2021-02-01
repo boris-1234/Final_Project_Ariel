@@ -1,4 +1,4 @@
-package com.example.final_project_ariel;
+package com.example.final_project_ariel.PagesPackage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.final_project_ariel.R;
+import com.example.final_project_ariel.UtilsPackage.EmailPasswordValidator;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;

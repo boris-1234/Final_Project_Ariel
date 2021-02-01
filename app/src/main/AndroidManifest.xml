@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.Final_Project_Ariel">
-        <activity android:name=".HouseCommitteeActivity"></activity>
-        <activity android:name=".TenantActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".PagesPackage.HouseCommitteeActivity"></activity>
+        <activity android:name=".PagesPackage.TenantActivity" />
+        <activity android:name=".PagesPackage.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
