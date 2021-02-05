@@ -7,11 +7,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.final_project_ariel.AdaptersPackage.AdapterTenant;
+import com.example.final_project_ariel.ModelsPackage.TenantModel;
 import com.example.final_project_ariel.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+
+import java.util.ArrayList;
 
 public class TenantActivity extends AppCompatActivity {
 
@@ -20,12 +24,12 @@ public class TenantActivity extends AppCompatActivity {
     private final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     private final String userEmail = user.getEmail();
     private RecyclerView recyclerViewTenant;
+    private final ArrayList<TenantModel> tenantModelArrayList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tenant);
-
         initUI();
         readFirestore();
     }
@@ -39,6 +43,8 @@ public class TenantActivity extends AppCompatActivity {
     }
 
     private void readFirestore() {
+        tenantModelArrayList.clear();
+
         db.collection("tenant")
                 .whereEqualTo("userName", userEmail)
                 .get()
@@ -55,7 +61,14 @@ public class TenantActivity extends AppCompatActivity {
                                         if (task2.isSuccessful()) {
                                             for (QueryDocumentSnapshot document2 : task2.getResult()) {
                                                 Log.i(TAG, document2.getId() + " => " + document2.getData());
+
+                                                TenantModel tenantModel = document2.toObject(TenantModel.class);
+                                                tenantModel.setId(document2.getId());
+                                                tenantModelArrayList.add(tenantModel);
                                             }
+
+                                            AdapterTenant adapter = new AdapterTenant(tenantModelArrayList);
+                                            recyclerViewTenant.setAdapter(adapter);
                                         } else {
                                             Log.e(TAG, "Error getting documents.", task2.getException());
                                         }

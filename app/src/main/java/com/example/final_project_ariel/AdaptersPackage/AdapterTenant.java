@@ -33,7 +33,7 @@ public class AdapterTenant extends RecyclerView.Adapter<AdapterTenant.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolderTenant holder, int position) {
         TenantModel tenantModel = tenantModels.get(position);
-        holder.textViewPaid.setText(tenantModel.getPaid());
+        holder.textViewPaid.setText(String.valueOf(tenantModel.getPaid()));
     }
 
     @Override
@@ -50,6 +50,7 @@ public class AdapterTenant extends RecyclerView.Adapter<AdapterTenant.ViewHolder
 
             textViewPaid = itemView.findViewById(R.id.textViewPaid);
         }
+
     }
 
 }
