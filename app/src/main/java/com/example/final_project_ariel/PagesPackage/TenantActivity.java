@@ -81,11 +81,3 @@ public class TenantActivity extends AppCompatActivity {
     }
 
 }
-
-// (1) 1. Set in 'activity_tenant' xml RecyclerView tag - V
-// (1) 2. Create class(Model) with the name 'TenantModel' - V
-// (1.5) 3. In the class 'TenantModel' put field that called 'paid' and create getters and setters to this field - V
-// (1) 4. Put in 'TenantActivity' class all the necessary data to use with RecyclerView - V
-// (1.5) 5. Create new xml with the name 'adapter_tenant' and put him TextView tag that show later the paid from firestore(like: 5,000) - V
-// (5) 6. Create new class with the name 'AdapterTenant' and put him all the data you need to show data in the RecyclerView - V
-// (2.5) 7. Put the data from the inner read firestore in the RecyclerView
