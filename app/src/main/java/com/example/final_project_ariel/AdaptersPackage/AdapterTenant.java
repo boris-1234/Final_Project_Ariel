@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class AdapterTenant extends RecyclerView.Adapter<AdapterTenant.ViewHolderTenant> {
 
-    private ArrayList<TenantModel> tenantModels;
+    private final ArrayList<TenantModel> tenantModels;
 
     public AdapterTenant(ArrayList<TenantModel> tenantModels) {
         this.tenantModels = tenantModels;
@@ -43,7 +43,7 @@ public class AdapterTenant extends RecyclerView.Adapter<AdapterTenant.ViewHolder
 
     public static class ViewHolderTenant extends RecyclerView.ViewHolder {
 
-        private TextView textViewPaid;
+        private final TextView textViewPaid;
 
         public ViewHolderTenant(View itemView) {
             super(itemView);

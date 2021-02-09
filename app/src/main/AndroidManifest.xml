@@ -11,8 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.Final_Project_Ariel">
-        <activity android:name=".PagesPackage.HouseCommitteeActivity"></activity>
-        <activity android:name=".PagesPackage.TenantActivity" />
         <activity android:name=".PagesPackage.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PagesPackage.HCTenantPaymentActivity" />
+        <activity android:name=".PagesPackage.HouseCommitteeActivity" />
+        <activity android:name=".PagesPackage.TenantActivity" />
     </application>
 
 </manifest>
