@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/Theme.Final_Project_Ariel">
+
         <activity android:name=".PagesPackage.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +22,9 @@
         <activity android:name=".PagesPackage.HCTenantPaymentActivity" />
         <activity android:name=".PagesPackage.HouseCommitteeActivity" />
         <activity android:name=".PagesPackage.TenantActivity" />
+        <activity android:name=".PagesPackage.HCTotalPricesInTheBuildingActivity" />
+        <activity android:name=".PagesPackage.HCTotalPayments" />
+        <activity android:name=".PagesPackage.HCUpdatePaymentTenant" />
     </application>
 
 </manifest>

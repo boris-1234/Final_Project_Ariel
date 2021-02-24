@@ -7,52 +7,49 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.final_project_ariel.AdaptersPackage.AdapterHCTotalPricesInTheBuilding;
 import com.example.final_project_ariel.AdaptersPackage.AdapterTenant;
-import com.example.final_project_ariel.ModelsPackage.TenantModel;
 import com.example.final_project_ariel.R;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-public class TenantActivity extends AppCompatActivity {
+public class HCTotalPricesInTheBuildingActivity extends AppCompatActivity {
 
     private static final String TAG = "check1";
+    private RecyclerView recyclerViewHCTotalPriceInTheBuilding;
     private FirebaseFirestore db;
-    private final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-    private final String userEmail = user.getEmail();
-    private RecyclerView recyclerViewTenant;
-    private final ArrayList<TenantModel> tenantModelArrayList = new ArrayList<>();
+    private final ArrayList<String> stringArrayList = new ArrayList<>();
+    private AdapterHCTotalPricesInTheBuilding adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tenant);
+        setContentView(R.layout.activity_h_c_total_prices_in_the_building);
 
         initUI();
         readFirestore();
     }
 
     private void initUI() {
-        recyclerViewTenant = findViewById(R.id.recyclerViewTenant);
-
-        recyclerViewTenant.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewHCTotalPriceInTheBuilding = findViewById(R.id.recyclerViewHCTotalPriceInTheBuilding);
+        recyclerViewHCTotalPriceInTheBuilding.setLayoutManager(new LinearLayoutManager(this));
 
         db = FirebaseFirestore.getInstance();
     }
 
     private void readFirestore() {
-        tenantModelArrayList.clear();
+        adapter = new AdapterHCTotalPricesInTheBuilding(stringArrayList);
 
         db.collection("tenant")
-                .whereEqualTo("userName", userEmail)
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         for (QueryDocumentSnapshot document : task.getResult()) {
-                            Log.i(TAG, document.getId() + " => " + document.getData());
+                            Log.i(TAG, document.getId() + "=>" + document.getData());
 
                             db.collection("tenant")
                                     .document(document.getId())
@@ -63,18 +60,17 @@ public class TenantActivity extends AppCompatActivity {
                                             for (QueryDocumentSnapshot document2 : task2.getResult()) {
                                                 Log.i(TAG, document2.getId() + " => " + document2.getData());
 
-                                                TenantModel tenantModel = document2.toObject(TenantModel.class);
-                                                tenantModel.setId(document2.getId());
-                                                tenantModelArrayList.add(tenantModel);
-                                            }
+                                                stringArrayList.add(document.getId() + " => " + document2.getId());
 
-                                            AdapterTenant adapter = new AdapterTenant(tenantModelArrayList);
-                                            recyclerViewTenant.setAdapter(adapter);
+                                                adapter.setData(stringArrayList);
+                                            }
                                         } else {
                                             Log.e(TAG, "Error getting documents.", task2.getException());
                                         }
                                     });
                         }
+
+                        recyclerViewHCTotalPriceInTheBuilding.setAdapter(adapter);
                     } else {
                         Log.e(TAG, "Error getting documents.", task.getException());
                     }
@@ -82,3 +78,5 @@ public class TenantActivity extends AppCompatActivity {
     }
 
 }
+
+// Organize the method readFirestore - the data that printed in LogCat print the number of tenant and the months that the tenant paid

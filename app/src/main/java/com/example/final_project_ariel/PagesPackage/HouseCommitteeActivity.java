@@ -44,10 +44,16 @@ public class HouseCommitteeActivity extends AppCompatActivity implements View.On
                 startActivity(intentTenantPayment);
                 break;
             case R.id.btnTotalPricesInTheBuilding:
+                Intent intentTotalPricesInTheBuilding = new Intent(this, HCTotalPricesInTheBuildingActivity.class);
+                startActivity(intentTotalPricesInTheBuilding);
                 break;
             case R.id.btnSetTenantPayments:
+                Intent intentSetTenantPayments = new Intent(this, HCUpdatePaymentTenant.class);
+                startActivity(intentSetTenantPayments);
                 break;
             case R.id.btnMonthlyIncomeViaMonths:
+                Intent intentMonthlyIncomeViaMonths = new Intent(this, HCTotalPayments.class);
+                startActivity(intentMonthlyIncomeViaMonths);
                 break;
         }
     }

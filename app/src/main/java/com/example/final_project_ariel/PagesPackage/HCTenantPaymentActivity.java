@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class HCTenantPaymentActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = "HouseCommittee";
+    private static final String TAG = "check1";
     private FirebaseFirestore db;
     private RecyclerView recyclerViewHCTenantPayments;
     private final ArrayList<String> stringArrayList = new ArrayList<>();
